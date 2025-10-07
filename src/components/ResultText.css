@@ -1,13 +1,12 @@
 .result-text {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-50%);
   z-index: 5;
   background: var(--color-dark);
-  padding: 1rem 1.8rem;
+  padding: .8rem 1.6rem;
   border-radius: .4rem;
-  font-size: 3.2rem;
   text-align: center;
   animation: fadeInOut 1.5s ease forwards;
 }
@@ -45,6 +44,6 @@
 @media (min-width: 1000px) {
   .result-text {
     transform: scale(2);
-    transform-origin: center;
+    transform-origin: bottom right;
   }
 }
