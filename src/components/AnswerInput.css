@@ -1,0 +1,62 @@
+.answer-form {
+  position: absolute;
+  display: flex;
+  bottom: calc(var(--footer-height) + 1.6rem);
+  right: 1.6rem;
+  left: 1.6rem;
+  max-width: 800px;
+  margin: 0 auto;
+  transition: opacity 0.2s ease;
+}
+.answer-form.transparent {
+  opacity: 0.5;
+}
+
+.answer-form input {
+  flex: 1;
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  border-radius: 0.4rem 0 0 0.4rem;
+  border: solid 0.2rem var(--color-light);
+  border-right: none;
+  outline: none;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.answer-form input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.answer-form button {
+  padding: 10px 18px;
+  background-color: var(--color-dark);
+  border: solid 0.2rem var(--color-light);
+  border-radius: 0 0.4rem 0.4rem 0;
+  color: var(--color-light);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.answer-form button:hover:not(:disabled) {
+  background-color: var(--color-green);
+}
+
+.answer-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 400px) {
+  .answer-form {
+    flex-direction: column;
+  }
+  .answer-form input {
+    border: solid 0.2rem var(--color-light);
+    border-radius: 0.4rem 0.4rem 0 0;
+    border-bottom: none;
+  }
+  .answer-form button {
+    border-radius: 0 0 0.4rem 0.4rem;
+  }
+}

@@ -1,0 +1,50 @@
+.result-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  background: var(--color-dark);
+  padding: 1rem 1.8rem;
+  border-radius: .4rem;
+  font-size: 3.2rem;
+  text-align: center;
+  animation: fadeInOut 1.5s ease forwards;
+}
+
+/* Couleurs selon le type */
+.result-text.correct {
+  color: var(--color-green);
+  border: .2rem solid var(--color-green);
+}
+
+.result-text.wrong {
+  color: var(--color-red);
+  border: .2rem solid var(--color-red);
+}
+
+/* Apparition/disparition fluide */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    /* transform: translate(-50%, -5px); */
+  }
+  20% {
+    opacity: 1;
+    /* transform: translate(-50%, 0); */
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    /* transform: translate(-50%, -5px); */
+  }
+}
+
+@media (min-width: 1000px) {
+  .result-text {
+    transform: scale(2);
+    transform-origin: center;
+  }
+}

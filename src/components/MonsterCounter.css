@@ -1,0 +1,16 @@
+.monster-counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--color-dark-transparent);
+  padding: .8rem 1.6rem;
+  border-bottom-left-radius: .4rem;
+  transition: transform .4s ease-in-out;
+}
+
+@media (min-width: 1000px) {
+  .monster-counter {
+    transform: scale(2);
+    transform-origin: top right;
+  }
+}

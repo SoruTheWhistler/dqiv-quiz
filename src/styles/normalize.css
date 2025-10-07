@@ -1,0 +1,94 @@
+:root {
+  --footer-height: 3.2rem;
+
+  --color-green: #00C438;
+  --color-red: #ff2323;
+  --color-dark: #292929;
+  --color-dark-transparent: #29292933;
+  --color-light: #FEFEFE;
+
+  --color-placeholder: #888888;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  list-style: none;
+  vertical-align: baseline;
+  font-size: 1.6rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  height: 100%;
+}
+
+/* 3. Body font et background */
+body {
+  line-height: 1.5;
+  height: 100%;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  font-family: "Dragon Quest DS", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1{
+  font-size: 3.2rem;
+}
+
+/* 5. Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 7. Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 8. Form elements */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* 9. Button cursor */
+button {
+  cursor: pointer;
+}
+
+/* 10. Remove default quotes from blockquote/q */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}

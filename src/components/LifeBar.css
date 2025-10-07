@@ -1,0 +1,22 @@
+.life-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-dark-transparent);
+  padding: .8rem 1.6rem;
+  gap: .8rem;
+  border-bottom-right-radius: .4rem;
+  transition: transform .4s ease-in-out;
+}
+
+.life-bar img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+}
+
+@media (min-width: 1000px) {
+  .life-bar {
+    transform: scale(2);
+    transform-origin: top left;
+  }
+}

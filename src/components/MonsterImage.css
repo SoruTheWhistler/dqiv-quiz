@@ -1,0 +1,15 @@
+.monster-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+.monster-image.transparent {
+  opacity: 0.5;
+}
+
+.monster-image img {
+  text-align: center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+}
