@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import reportWebVitals from "./reportWebVitals";
 
 import "./styles/fonts.css";
-import "./styles/normalize.css";
+import "./styles/styles.css";
 
 const root = ReactDOM.createRoot(document.querySelector("body"));
 root.render(

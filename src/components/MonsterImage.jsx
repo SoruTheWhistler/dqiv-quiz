@@ -24,6 +24,7 @@ export default function MonsterImage({ src, alt, feedback }) {
         src={image}
         alt="Monstre à deviner. Si l'image ne s'affiche pas, recharger la page."
         style={{ width: size.width, height: size.height }}
+        data-tg="Tu croyais pouvoir tricher en regardant le nom du fichier !? Dégage d'ici et va te faire slurper par un gluanbulle, odieux personnage ! >:3"
       />
     </div>
   );

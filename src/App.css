@@ -23,7 +23,7 @@
   background-image: url("./img/background-green.png");
 }
 #game-container.half-hp {
-  background-image: url("./img/background-purple.png");
+  background-image: url("./img/background-yellow.png");
 }
 #game-container.low-hp {
   background-image: url("./img/background-red.png");

@@ -1,0 +1,94 @@
+#result-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  color: var(--color-seasalt);
+  background-image: url("../img/background.png");
+  background-repeat: repeat;
+  animation: moveBackground 12s linear infinite;
+  overflow-y: auto;
+  text-align: center;
+}
+
+#result-screen h2 {
+  font-size: 2.4rem;
+  text-shadow: 0 0 10px #000;
+  margin-bottom: 2rem;
+}
+
+.results-table {
+  width: 90%;
+  max-width: 70rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.8rem;
+  box-shadow: 0 0 1rem #000a;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.results-table th {
+  background: linear-gradient(180deg, var(--color-not-as-dark), var(--color-dark));
+  color: var(--color-pale);
+  padding: 1.2rem;
+  font-weight: bold;
+  border-bottom: 0.2rem solid var(--color-pale);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.results-table td {
+  padding: 1rem 1.2rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.results-table tr:last-child td {
+  border-bottom: none;
+}
+
+.results-table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.results-table tr.correct td {
+  color: var(--color-seasalt);
+}
+
+.results-table tr.wrong td {
+  color: var(--color-red);
+}
+
+#result-screen .summary {
+  margin-top: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem 2rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+
+#result-screen button {
+  margin-top: 2.4rem;
+  padding: 0.8rem 1.6rem;
+  background-color: var(--color-dark);
+  border: 0.2rem solid var(--color-seasalt);
+  border-radius: 0.6rem;
+  color: var(--color-seasalt);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+#result-screen button:hover {
+  background-color: var(--color-green);
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

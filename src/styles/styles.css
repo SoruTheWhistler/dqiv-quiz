@@ -1,11 +1,17 @@
 :root {
   --footer-height: 3.2rem;
 
-  --color-green: #00C438;
-  --color-red: #ff2323;
+  --color-green: #23CE6B;
+  --color-red: #A31621;
+  --color-blue-gray: #5A9CE7;
+  --color-tang-blue: #105AC6;
+  --color-tang-blue-darkened: #0547ab;
   --color-dark: #292929;
+  --color-not-as-dark: #333333;
   --color-dark-transparent: #29292933;
-  --color-light: #FEFEFE;
+  --color-seasalt: #FCFAFA;
+  --color-pale: #E4FDE1;
+  /* I don't know why I feel like this */
 
   --color-placeholder: #888888;
 }
@@ -32,7 +38,7 @@ body {
   line-height: 1.5;
   height: 100%;
   background-color: var(--color-dark);
-  color: var(--color-light);
+  color: var(--color-seasalt);
   font-family: "Dragon Quest DS", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

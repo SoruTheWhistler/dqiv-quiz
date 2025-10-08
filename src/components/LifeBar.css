@@ -1,5 +1,6 @@
 .life-bar {
   position: absolute;
+  display: none; /* Life bar deactivated */
   top: 0;
   left: 0;
   background-color: var(--color-dark-transparent);

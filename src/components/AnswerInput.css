@@ -17,11 +17,11 @@
   padding: 1rem 1.2rem;
   font-size: 1.6rem;
   border-radius: 0.4rem 0 0 0.4rem;
-  border: solid 0.2rem var(--color-light);
+  border: solid 0.2rem var(--color-seasalt);
   border-right: none;
   outline: none;
   background-color: var(--color-dark);
-  color: var(--color-light);
+  color: var(--color-seasalt);
 }
 
 .answer-form input::placeholder {
@@ -31,9 +31,9 @@
 .answer-form button {
   padding: 10px 18px;
   background-color: var(--color-dark);
-  border: solid 0.2rem var(--color-light);
+  border: solid 0.2rem var(--color-seasalt);
   border-radius: 0 0.4rem 0.4rem 0;
-  color: var(--color-light);
+  color: var(--color-seasalt);
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -52,7 +52,7 @@
     flex-direction: column;
   }
   .answer-form input {
-    border: solid 0.2rem var(--color-light);
+    border: solid 0.2rem var(--color-seasalt);
     border-radius: 0.4rem 0.4rem 0 0;
     border-bottom: none;
   }
