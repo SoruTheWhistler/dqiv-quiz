@@ -37,7 +37,7 @@ export default function App() {
       count = 10;
     }
     if (count > 214) {
-      window.location.href = "https://geekireland.com/wp-content/uploads/2014/10/1394132_550638398351602_1299866476_n.jpg";
+      window.location.href = "https://i.pinimg.com/736x/fb/22/fd/fb22fde014438accd3dac6dadf5d2e67.jpg";
       return;
     }
     const shuffled = [...monsters];

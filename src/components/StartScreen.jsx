@@ -18,7 +18,6 @@ export default function StartScreen({ onStart, maxMonsters }) {
           <input
             type="number"
             min="5"
-            step="5"
             max={maxMonsters}
             value={numMonsters}
             onChange={(e) => setNumMonsters(Number(e.target.value))}
