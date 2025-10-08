@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/dqiv-quiz-des-monstres/static/css/main.54661c7d.css",
-    "main.js": "/dqiv-quiz-des-monstres/static/js/main.dad8278d.js",
+    "main.js": "/dqiv-quiz-des-monstres/static/js/main.af8cb44c.js",
     "static/js/453.59c8a005.chunk.js": "/dqiv-quiz-des-monstres/static/js/453.59c8a005.chunk.js",
     "static/media/dragon-quest-ds.otf": "/dqiv-quiz-des-monstres/static/media/dragon-quest-ds.053dd8edd41c18249a5e.otf",
     "index.html": "/dqiv-quiz-des-monstres/index.html",
     "main.54661c7d.css.map": "/dqiv-quiz-des-monstres/static/css/main.54661c7d.css.map",
-    "main.dad8278d.js.map": "/dqiv-quiz-des-monstres/static/js/main.dad8278d.js.map",
+    "main.af8cb44c.js.map": "/dqiv-quiz-des-monstres/static/js/main.af8cb44c.js.map",
     "453.59c8a005.chunk.js.map": "/dqiv-quiz-des-monstres/static/js/453.59c8a005.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.54661c7d.css",
-    "static/js/main.dad8278d.js"
+    "static/js/main.af8cb44c.js"
   ]
 }
