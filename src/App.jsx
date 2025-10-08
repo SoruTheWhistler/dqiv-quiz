@@ -47,6 +47,10 @@ export default function App() {
 
   const handleAnswerSubmit = (userInput) => {
     if (!selectedMonsters.length) return;
+    if (userInput.length > 25) {
+      window.location.href = "https://www.youtube.com/watch?v=NZh5YxDpuK4";
+      return;
+    }
 
     const currentMonster = selectedMonsters[currentIndex];
     const normalizedInput = normalize(userInput);
@@ -69,7 +73,8 @@ export default function App() {
       setScore((s) => s + 1);
     } else {
       setFeedback({ type: "wrong", data: currentMonster.names });
-      /* Unused lives system ; not sure how to implement it... */
+      /* Unused lives system ; not sure how to implement it...
+      Also remove the "display: none;" line in LifeBar.css to reactivate it */
       // setLives((prev) => {
       //   const newLives = prev - 1;
       //   if (newLives <= 0) {
@@ -105,7 +110,9 @@ export default function App() {
   };
 
   if (!gameStarted) {
-    return <StartScreen onStart={handleGameStart} maxMonsters={monsters.length} />;
+    return (
+      <StartScreen onStart={handleGameStart} maxMonsters={monsters.length} />
+    );
   }
 
   if (gameOver) {

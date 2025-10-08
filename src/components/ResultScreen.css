@@ -21,14 +21,14 @@
 
 .results-table {
   width: 90%;
-  max-width: 70rem;
+  max-width: 60rem;
   border-collapse: separate;
   border-spacing: 0;
-  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 0.8rem;
   box-shadow: 0 0 1rem #000a;
   animation: fadeIn 0.5s ease-out;
+  overflow: hidden;
 }
 
 .results-table th {

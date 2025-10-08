@@ -23,6 +23,7 @@ export default function AnswerInput({ answer, setAnswer, onSubmit, disabled, fee
         ref={inputRef}
         type="text"
         value={answer}
+        maxlength="25"
         onChange={(e) => setAnswer(e.target.value)}
         disabled={disabled}
         placeholder="Entrez le nom du monstre..."
