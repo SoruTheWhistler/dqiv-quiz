@@ -32,8 +32,17 @@ export default function App() {
   const totalMonsters = selectedMonsters.length;
 
   const handleGameStart = (count) => {
+    if (count < 5) {
+      alert("Tu vas pas aller bien loin avec une valeur inférieure à 5 ! Permets-moi de te la mettre à 10, pour la peine.");
+      count = 10;
+    }
+    if (count > 214) {
+      window.location.href = "https://geekireland.com/wp-content/uploads/2014/10/1394132_550638398351602_1299866476_n.jpg";
+      return;
+    }
     const shuffled = [...monsters];
     shuffle(shuffled);
+
     setSelectedMonsters(shuffled.slice(0, count));
     setSelectedCount(count);
     setGameStarted(true);
