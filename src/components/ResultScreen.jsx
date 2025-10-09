@@ -1,6 +1,8 @@
 import React from "react";
 import "./ResultScreen.css";
 
+import SecretScreen from "./SecretScreen";
+
 export default function ResultScreen({
   lives,
   maxHP,
@@ -9,9 +11,8 @@ export default function ResultScreen({
   attempts,
   onRestart,
 }) {
-  
   // Score shouldn't be higher than total
-  if (score > total) window.location.href = "https://i.pinimg.com/736x/fb/22/fd/fb22fde014438accd3dac6dadf5d2e67.jpg";
+  if (score > total) return <SecretScreen msg="C'est pas bien de tricher !"/>
   return (
     <div
       id="result-screen"
@@ -46,7 +47,7 @@ export default function ResultScreen({
         <tbody>
           {attempts.map((a, i) => (
             <tr key={i} className={a.correct ? "correct" : "wrong"}>
-              <td>{i}</td>
+              <td>{i + 1}</td>
               <td>
                 <a
                   href={

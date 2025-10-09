@@ -3,13 +3,16 @@ import React, { useState } from "react";
 import { normalize } from "./utils/normalize";
 import { shuffle } from "./utils/shuffle";
 
-import LifeBar from "./components/LifeBar";
+// import LifeBar from "./components/LifeBar";
 import MonsterCounter from "./components/MonsterCounter";
 import MonsterImage from "./components/MonsterImage";
 import AnswerInput from "./components/AnswerInput";
 import ResultText from "./components/ResultText";
+import SecretScreen from "./components/SecretScreen";
 import StartScreen from "./components/StartScreen";
 import ResultScreen from "./components/ResultScreen";
+
+import Footer from "./components/Footer";
 
 import monsters from "./data/monsters.json";
 import "./App.css";
@@ -38,11 +41,6 @@ export default function App() {
       );
       count = 10;
     }
-    if (count > 214) {
-      window.location.href =
-        "https://i.pinimg.com/736x/fb/22/fd/fb22fde014438accd3dac6dadf5d2e67.jpg";
-      return;
-    }
     const shuffled = [...monsters];
     shuffle(shuffled);
 
@@ -59,10 +57,6 @@ export default function App() {
 
   const handleAnswerSubmit = (userInput) => {
     if (!selectedMonsters.length) return;
-    if (userInput.length > 25) {
-      window.location.href = "https://www.youtube.com/watch?v=NZh5YxDpuK4";
-      return;
-    }
 
     const currentMonster = selectedMonsters[currentIndex];
     const normalizedInput = normalize(userInput);
@@ -85,8 +79,7 @@ export default function App() {
       setScore((s) => s + 1);
     } else {
       setFeedback({ type: "wrong", data: currentMonster.names });
-      /* Unused lives system ; not sure how to implement it...
-      Also remove the "display: none;" line in LifeBar.css to reactivate it */
+      /* Unused lives system ; not sure how to implement it... */
       // setLives((prev) => {
       //   const newLives = prev - 1;
       //   if (newLives <= 0) {
@@ -121,6 +114,13 @@ export default function App() {
     setAttempts([]);
   };
 
+  if (selectedCount > 214)
+    return <SecretScreen msg="Inutile. Tu n'iras pas au-delà de 214." />;
+  if (answer.length > 22)
+    return (
+      <SecretScreen msg="Aucun monstre n'a plus de 22 caractères dans son nom. Arrête." />
+    );
+
   if (!gameStarted) {
     return (
       <StartScreen onStart={handleGameStart} maxMonsters={monsters.length} />
@@ -148,28 +148,33 @@ export default function App() {
   if (lives <= maxHP / 4) hpClass = "low-hp";
 
   return (
-    <main id="game-container" className={hpClass}>
-      <div className="filter">
-        <LifeBar lives={lives} maxHP={maxHP} />
-        <MonsterCounter currentIndex={currentIndex} total={totalMonsters} />
-        {feedback && <ResultText names={feedback.data} type={feedback.type} />}
+    <>
+      <main id="game-container" className={hpClass}>
+        <div className="filter">
+          {/* <LifeBar lives={lives} maxHP={maxHP} /> */}
+          <MonsterCounter currentIndex={currentIndex} total={totalMonsters} />
+          {feedback && (
+            <ResultText names={feedback.data} type={feedback.type} />
+          )}
 
-        {currentMonster && (
-          <MonsterImage
-            src={currentMonster.image}
-            alt={currentMonster.names[0].name}
+          {currentMonster && (
+            <MonsterImage
+              src={currentMonster.image}
+              alt={currentMonster.names[0].name}
+              feedback={feedback}
+            />
+          )}
+
+          <AnswerInput
+            answer={answer}
+            setAnswer={setAnswer}
+            onSubmit={handleAnswerSubmit}
+            disabled={!!feedback}
             feedback={feedback}
           />
-        )}
-
-        <AnswerInput
-          answer={answer}
-          setAnswer={setAnswer}
-          onSubmit={handleAnswerSubmit}
-          disabled={!!feedback}
-          feedback={feedback}
-        />
-      </div>
-    </main>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }
