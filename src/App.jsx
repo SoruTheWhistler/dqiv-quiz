@@ -33,11 +33,14 @@ export default function App() {
 
   const handleGameStart = (count) => {
     if (count < 5) {
-      alert("Tu vas pas aller bien loin avec une valeur inférieure à 5 ! Permets-moi de te la mettre à 10, pour la peine.");
+      alert(
+        "Tu vas pas aller bien loin avec une valeur inférieure à 5 ! Permets-moi de te la mettre à 10, pour la peine."
+      );
       count = 10;
     }
     if (count > 214) {
-      window.location.href = "https://i.pinimg.com/736x/fb/22/fd/fb22fde014438accd3dac6dadf5d2e67.jpg";
+      window.location.href =
+        "https://i.pinimg.com/736x/fb/22/fd/fb22fde014438accd3dac6dadf5d2e67.jpg";
       return;
     }
     const shuffled = [...monsters];
@@ -146,25 +149,27 @@ export default function App() {
 
   return (
     <main id="game-container" className={hpClass}>
-      <LifeBar lives={lives} maxHP={maxHP} />
-      <MonsterCounter currentIndex={currentIndex} total={totalMonsters} />
-      {feedback && <ResultText names={feedback.data} type={feedback.type} />}
+      <div className="filter">
+        <LifeBar lives={lives} maxHP={maxHP} />
+        <MonsterCounter currentIndex={currentIndex} total={totalMonsters} />
+        {feedback && <ResultText names={feedback.data} type={feedback.type} />}
 
-      {currentMonster && (
-        <MonsterImage
-          src={currentMonster.image}
-          alt={currentMonster.names[0].name}
+        {currentMonster && (
+          <MonsterImage
+            src={currentMonster.image}
+            alt={currentMonster.names[0].name}
+            feedback={feedback}
+          />
+        )}
+
+        <AnswerInput
+          answer={answer}
+          setAnswer={setAnswer}
+          onSubmit={handleAnswerSubmit}
+          disabled={!!feedback}
           feedback={feedback}
         />
-      )}
-
-      <AnswerInput
-        answer={answer}
-        setAnswer={setAnswer}
-        onSubmit={handleAnswerSubmit}
-        disabled={!!feedback}
-        feedback={feedback}
-      />
+      </div>
     </main>
   );
 }

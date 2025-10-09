@@ -6,16 +6,37 @@
   align-items: center;
   padding: 4rem 2rem;
   color: var(--color-seasalt);
-  background-image: url("../img/background.png");
-  background-repeat: repeat;
-  animation: moveBackground 12s linear infinite;
   overflow-y: auto;
   text-align: center;
+
+  background-image: url("../img/background.png");
+  background-repeat: repeat;
+  animation: moveBackground 8s linear infinite;
+}
+
+#result-screen.highest-score {
+  background-image: url("../img/background-purple.png");
+}
+#result-screen.good-score {
+  background-image: url("../img/background-green.png");
+}
+#result-screen.half-score {
+  background-image: url("../img/background-yellow.png");
+}
+#result-screen.low-score {
+  background-image: url("../img/background-red.png");
+}
+#result-screen.worst-score {
+  background-image: url("../img/background-black.png");
+}
+
+#result-screen h1 {
+  text-shadow: 0 0 0.8rem var(--color-dark);
 }
 
 #result-screen h2 {
-  font-size: 2.4rem;
-  text-shadow: 0 0 10px #000;
+  /* font-size: 2.4rem; */
+  text-shadow: 0 0 0.8rem var(--color-dark);
   margin-bottom: 2rem;
 }
 
@@ -34,6 +55,8 @@
 .results-table th {
   background: linear-gradient(180deg, var(--color-not-as-dark), var(--color-dark));
   color: var(--color-pale);
+  text-align: center;
+  vertical-align: middle;
   padding: 1.2rem;
   font-weight: bold;
   border-bottom: 0.2rem solid var(--color-pale);
@@ -41,11 +64,17 @@
   letter-spacing: 0.1rem;
 }
 
-.results-table td {
-  padding: 1rem 1.2rem;
+.results-table tbody {
   background-color: rgba(0, 0, 0, 0.25);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: background-color 0.2s ease;
+
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.results-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.2rem;
 }
 
 .results-table tr:last-child td {
@@ -73,6 +102,8 @@
 }
 
 #result-screen button {
+  width: 90%;
+  max-width: 60rem;
   margin-top: 2.4rem;
   padding: 0.8rem 1.6rem;
   background-color: var(--color-dark);
@@ -85,10 +116,15 @@
 
 #result-screen button:hover {
   background-color: var(--color-green);
-  transform: scale(1.05);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

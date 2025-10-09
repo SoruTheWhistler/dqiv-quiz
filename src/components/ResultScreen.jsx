@@ -10,14 +10,32 @@ export default function ResultScreen({
   onRestart,
 }) {
   return (
-    <div id="result-screen">
+    <div
+      id="result-screen"
+      className={
+        score === 214
+          ? "highest-score"
+          : score === 0
+          ? "worst-score"
+          : score <= total / 4
+          ? "low-score"
+          : score <= total / 2
+          ? "half-score"
+          : score < total
+          ? "good-score"
+          : "best-score"
+      }
+    >
       <h1>Résultats</h1>
-      <p>Score : <strong>{score}</strong> / {total}{" "}</p>
+      <h2>
+        Score : {score} / {total}
+      </h2>
       {/* <p>Vies restantes : {lives} / {maxHP}</p> */}
 
       <table className="results-table">
         <thead>
           <tr>
+            <th>N°</th>
             <th>Monstre</th>
             <th>Ta réponse</th>
           </tr>
@@ -25,7 +43,18 @@ export default function ResultScreen({
         <tbody>
           {attempts.map((a, i) => (
             <tr key={i} className={a.correct ? "correct" : "wrong"}>
-              <td>{a.monster}</td>
+              <td>{i}</td>
+              <td>
+                <a
+                  href={
+                    "https://wikidragonquest.fr/" + a.monster.replace(" ", "_")
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {a.monster}
+                </a>
+              </td>
               <td>{a.userAnswer || "(vide)"}</td>
             </tr>
           ))}

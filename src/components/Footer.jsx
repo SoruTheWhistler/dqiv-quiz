@@ -7,9 +7,7 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <p className="font-medium">
-        {currentYear} © SoruTheWhistler
-      </p>
+      <p>{currentYear + " © SoruTheWhistler"}</p>
     </footer>
   );
 }

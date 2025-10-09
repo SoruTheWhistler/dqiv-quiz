@@ -6,30 +6,36 @@
   justify-content: center;
   height: 100%;
 
+  background-image: url("./img/background.png");
   background-repeat: repeat;
   background-size: auto;
-  animation: moveBackground 12s linear infinite;
-  
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+  animation: moveBackground 8s linear infinite;
 
-  /* background-color: #var(--color-dark)88;
+  /* background-color: var(--color-seasalt-transparent);
   background-blend-mode: lighten; */
 }
-#game-container.full-hp {
-  background-image: url("./img/background.png");
-}
-#game-container.high-hp {
-  background-image: url("./img/background-green.png");
-}
-#game-container.half-hp {
-  background-image: url("./img/background-yellow.png");
-}
-#game-container.low-hp {
-  background-image: url("./img/background-red.png");
+
+.filter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
 @keyframes moveBackground {
-  from { background-position: 0 0; }
-  to   { background-position: -256px 256px; } /* plus le déplacement, plus le mouvement est perceptible */
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -256px 256px;
+  } /* plus le déplacement, plus le mouvement est perceptible */
 }
